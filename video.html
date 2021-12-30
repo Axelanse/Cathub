@@ -1,0 +1,51 @@
+<body id="back_clr" style="background-color:rgb(255, 255, 255);">
+    <button type="button" id="dabutton" style="width: 20%; height: 20%;" onclick="startjumpscare()">Im not a robot</button>
+</body>
+<audio id="myAudio">
+    <source src="https://cdn.discordapp.com/attachments/913821877326217276/925007763535446116/granny_bed_jumpscare_sound_effectmp3converter.ogg" type="audio/ogg">
+    <source src="https://cdn.discordapp.com/attachments/913821877326217276/925007462032109588/granny_bed_jumpscare_sound_effectmp3converter.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+<script>
+    /* Get the documentElement (<html>) to display the page in fullscreen */
+    var elem = document.documentElement;
+    
+    /* View in fullscreen */
+    function openFullscreen() {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+      }
+    }
+    
+    /* Close fullscreen */
+    function closeFullscreen() {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) { /* Safari */
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) { /* IE11 */
+        document.msExitFullscreen();
+      }
+    }
+    function startjumpscare() {
+        var x_2 = document.getElementById("myAudio"); 
+        x_2.play();
+        setTimeout(() => { restoffunc() }, 100);
+    }
+    function restoffunc() {
+        var dabtn = document.getElementById('dabutton');
+        var dabild = document.createElement("IMG");
+        dabtn.remove();
+        dabild.setAttribute("src", "https://media.discordapp.net/attachments/911263510846119956/925006052087435294/Jpeg.jpg")
+        dabild.setAttribute("width", "100%")
+        dabild.setAttribute("height", "100%")
+        openFullscreen()
+        var bacc_clr = document.getElementById('back_clr')
+        bacc_clr.setAttribute("style", "background-color:rgb(0, 0, 0);")
+        document.body.appendChild(dabild);
+    }
+    </script>
